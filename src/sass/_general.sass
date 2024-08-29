@@ -1,0 +1,427 @@
+header
+	position: relative
+	height: 50px
+
+nav
+	position: fixed
+	width: 100%
+	height: 50px
+	background-color: #212121
+	z-index: 5
+
+.menu
+	display: flex
+	justify-content: space-between
+	padding: 13px 70px
+	margin: 0
+	list-style-type: none
+	&_link
+		color: #ffffff
+		font-size: 15px		
+		font-weight: 300
+		+link_hover /* изменил цвет при наведении */
+	&_item
+		border-right: 2px dotted black
+		padding-right: 40px
+		a
+			text-decoration: none
+		&:last-child /* задает стилевое оформление последнего элемента своего родителя */
+			border-right: none/* нет границ у элемента, в моём случае пэдингов */
+
+.subheader
+	position: absolute
+	top: 50px
+	width: 100%
+	height: 84px
+	background-color: rgba(0, 0, 0, 0.6)
+	&_logo
+		display: block
+		max-width: 100%
+		margin-top: 16px
+	&_official
+		margin-top: 6px
+		opacity: 0.5
+		color: #ffffff
+		font-size: 13px
+		font-weight: 400
+	&_call
+		margin-top: 19px
+		opacity: 0.5
+		color: #ffffff
+		font-size: 13px
+		font-weight: 400
+		text-align: right//горизонтальное выравнивание
+	&_phone
+		display: block
+		margin-top: 8px
+		text-align: right//горизонтальное выравнивание
+		color: #ffffff
+		font-size: 22px
+		font-weight: 400
+		text-transform: uppercase
+		text-decoration: none
+		line-height: 12px
+	&_btn
+		margin-top: 19px
+		width: 172px
+		height: 46px
+		box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.12)
+		border: none
+		border-radius: 4px
+		background-image: linear-gradient(to top, #1eacc7 0%, #4ce2ff 100%)
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12)
+		color: #ffffff
+		font-size: 14px
+		font-weight: 400
+		text-transform: uppercase
+		+btn_hover
+
+.hamburger /* создал блок для мобильной версии на размер от 320 до 768рх, то что выше - блок должен быть скрыт */
+	display: none
+
+.promo
+	min-height: 800px
+	background: url(../img/uber_bg.png) center (center / cover) no-repeat
+	padding: 150px 0 135px 0
+	&_header
+		color: #ffffff
+		font-weight: 700
+		text-transform: uppercase
+		font-size: 60px
+		line-height: 60px
+		margin: 0
+		text-align: center//горизонтальное выравнивание
+	&_subheader
+		color: #ffffff
+		font-weight: 700
+		text-transform: uppercase
+		font-size: 36px
+		line-height: 36px
+		margin: 0
+		margin-top: 22px
+		text-align: center//горизонтальное выравнивание
+	&_descr
+		color: #ffffff
+		font-size: 18px
+		font-weight: 400
+		line-height: 24px
+		text-align: center//горизонтальное выравнивание
+		margin-top: 23px
+	&_btn
+		display: block
+		margin: 118px auto 0 auto
+		width: 259px
+		height: 63px
+		box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.12)
+		border: none
+		border-radius: 4px
+		background-image: linear-gradient(to top, #1eacc7 0%, #4ce2ff 100%)
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.21)
+		color: #ffffff
+		font-style: 18px
+		font-weight: 400
+		text-transform: uppercase
+		+btn_hover
+
+.label
+	margin: 0 auto
+	height: 24px
+	width: 112px
+	padding: 5px 12px
+	background-color: #000
+	color: #ffffff
+	font-size: 11px
+	font-weight: 300
+	text-transform: uppercase
+	text-align: center//горизонтальное выравнивание
+
+.advantages	
+	padding: 71px 0 60px 0
+	&_promo
+		margin-top: 38px
+		position: relative
+		margin-bottom: 0
+		font-weight: 700
+		text-transform: uppercase
+		font-size: 38px
+		line-height: 38px
+		/* margin: 0;
+		text-align: center//горизонтальное выравнивание
+		/* z-index: 2;
+	&_item
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-top: 25px
+		/* width: 540px;
+	&_wrepper
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-right: 26px
+		background-color: #1eacc7
+		width: 113px
+		height: 113px
+		border-radius: 100%
+	&_text span
+		color: #1eacc7
+		font-size: 15px
+		font-weight: 300
+		line-height: 21px
+	&_descr
+		width: 360px
+
+.title
+	margin-top: 38px
+	position: relative
+	margin-bottom: 0
+	font-weight: 700
+	text-transform: uppercase
+	font-size: 38px
+	line-height: 38px
+	text-align: center//горизонтальное выравнивание
+
+.subtitle
+	margin-top: 19px
+	color: #222222
+	font-size: 17px
+	font-weight: 400
+	text-align: center//горизонтальное выравнивание
+
+.mobile
+	min-height: 864px
+	padding: 48px 0 79px 0
+	.row
+		margin-top: 32px//отодвинул картинки от заголовка
+	&_item //РАЗМЕР КАРТИНОК С ОТСТУПАМИ ТЕКСТА
+		position: relative
+		width: 320px
+		height: 280px
+		margin: 0 auto
+		margin-bottom: 19px//рассоеденил картинки
+		padding-top: 92px//отступ текста
+		&_1
+			background: url('../img/mobile_item_1.png') center (center / cover) no-repeat
+		&_2
+			background: url('../img/mobile_item_2.jpg') center (center / cover) no-repeat
+		&_3
+			background: url('../img/mobile_item_3.jpg') center (center / cover) no-repeat
+		&_4
+			background: url('../img/mobile_item_4.jpg') center (center / cover) no-repeat
+		&_5
+			background: url('../img/mobile_item_5.jpg') center (center / cover) no-repeat
+		&_6
+			background: url('../img/mobile_item_6.jpg') center (center / cover) no-repeat
+		&_subtitle //стилизация текста в картинке, без отступов (отступ прописал выше)
+			color: #ffffff
+			font-size: 24px
+			font-weight: 400
+			line-height: 32px
+			text-transform: uppercase
+			text-align: center//горизонтальное выравнивание
+		&_plus //стилизация крестика
+			display: flex
+			justify-content: center//управляет выравниванием элементов по главной оси во flex контейнере
+			align-items: center//горизонтальное выравнивание
+			position: absolute
+			bottom: 35px
+			left: 50%//встал по центру с погрешностью вправо
+			transform: translateX(-50%)//отодвинул левее,встал четко по центру, почему: потому-что это половина ширины моего плюса
+			width: 26px
+			height: 26px
+			background-color: #000000
+			margin: 0 auto
+			border-radius: 100%
+			cursor: pointer//при наведении меняется курсор и плюс не зависит от моего заголовка
+			&:before
+				content: ''//content - обязательный элемент, если в ковычках ничего не написано, то они должны быть пустыми
+				display: block
+				width: 14px
+				height: 2px
+				background-color: $main-color
+				transition: 0.3s all//при наведении задержка изменения цвета на 3 секунды
+			&:after
+				content: ''//content - обязательный элемент, если в ковычках ничего не написано, то они должны быть пустыми
+				position: absolute
+				/* transform: translateX(-50%) *///сдвинул вертикальную линию, по оси Х, на 50% его ширины
+				display: block
+				width: 2px
+				height: 14px
+				background-color: $main-color
+				transition: 0.3s all//при наведении задержка изменения цвета на 3 секунды
+			&:hover //при наведении мой плюс менял цвет
+				&:before, &:after
+					background-color: $second-color
+
+.choice
+	position: relative
+	min-height: 895px
+	padding: 57px 0 138px 0
+	.black
+		position: absolute
+		top: 0
+		left: 0
+		height: 499px
+		width: 100%
+		background-color: #070716
+		z-index: 1
+	.label_white
+		background-color: #fff
+		color: #000000
+	.label
+		position: relative
+		margin: 0 auto
+		height: 24px
+		width: 112px
+		padding: 5px 12px
+		font-size: 11px
+		font-weight: 300
+		text-transform: uppercase
+		text-align: center
+		z-index: 2
+	.title_white
+		color: #fff
+	.title
+		position: relative
+		margin-bottom: 0
+		margin-top: 38px
+		font-size: 38px
+		line-height: 38px
+		font-weight: 700
+		text-transform: uppercase
+		text-align: center
+		z-index: 2
+	.subtitle_white
+		color: #fff
+	.subtitle
+		position: relative
+		margin-top: 19px
+		font-size: 17px
+		font-weight: 400
+		text-align: center
+		z-index: 2
+	.choice_img
+		position: relative
+		display: block
+		margin: 56px auto 0 auto
+		z-index: 2
+	img
+		vertical-align: middle
+		border-style: none
+	.choice_descr
+		text-align: center
+		color: #222222
+		font-size: 17px
+		font-weight: 300
+		line-height: 24px
+
+.require
+	padding: 68px 0 84px 0
+	&_block
+		margin: 33px 0//установил границы сверху и снизу
+		&_nmb
+			margin-bottom: 0px//нет нижних границ
+	&_title
+		color: #1ca8c3
+		font-size: 22px
+		font-weight: 400
+	&_list	
+		list-style-type: non//убрал нумерацию, а именно кружки
+		padding-left: 50px//отступ текста слева
+		margin-top: 22px
+		li
+			position: relative
+			font-size: 17px
+			font-weight: 300
+			line-height: 24px
+			margin-bottom: 10px
+			&::before
+				content: ''
+				display: block
+				position: absolute
+				left: -32px//сдвинул иконку левее
+				top: 3px//сдвинул иконку ниже
+				width: 21px//ширина иконки
+				height: 20px//высота иконки
+				background: url('../icons/check_blue.svg') center (center / cover) no-repeat
+	&_descr
+		margin-top: 25px
+		font-style: 17px
+		font-weight: 300
+		line-height: 24px
+		color: #1ca8c3
+	.warning
+		.require_title
+			color: $second-color
+		.require_list
+			li
+				&::before
+					background: url('../icons/check_red.svg') center (center / cover) no-repeat
+
+.footer
+	padding: 14px 23px 39px 23px
+	&_divider //создал горизонтальную линию, покрасил
+		width: 299px
+		height: 4px
+		background-color: #1fbad6
+		margin: 0 auto
+	&_wrepper
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		margin-top: 32px
+	&_wrepper > div
+		width: 33%//разделил экран на 3 части
+		&:nth-child(3)//сдвинул правый блок вправо
+			display: flex
+			justify-content: flex-end
+	&_social
+		width: 160px
+		display: flex
+		justify-content: space-between
+		&_item
+			display: flex
+			justify-content: center
+			align-items: center
+			margin: 0 4px
+			width: 32px
+			height: 32px
+			background-color: #070716
+			border-radius: 100%
+			.logo
+				width: 20px
+				height: 20px
+.footer_linx
+	width: 390px
+	margin: 0 auto
+	&_main
+		display: flex
+		justify-content: space-between
+		padding: 0 10px
+		a
+			color: #070716
+			font-size: 15px
+			font-weight: 300
+			text-transform: uppercase
+	&_sub
+		display: flex
+		justify-content: space-between
+		margin-top: 10px
+		a
+			color: #999999
+			font-size: 11px
+			font-weight: 300
+			text-transform: uppercase
+	&_lang
+		display: block
+		margin: 0 auto
+		font-size: 11px
+		font-weight: 400
+		margin-top: 19px
+		text-transform: uppercase
+		text-align: center
+		a
+			color: #1fbad6
+
+.xs-visible
+	display: none//на больших разрешениях монитора этот блок скрывается, на маленьких будет виден

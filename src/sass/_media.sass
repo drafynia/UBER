@@ -1,0 +1,197 @@
+@media (max-width: 1200px)//максимальная ширина в моей мобильной версии 1200; устанавливаем ширинк экрана 992
+	.menu
+		&_item
+			padding-right: 20px//уменьшил пэддинг между верним меню
+		&_link
+			font-style: 13px//уменьшил шрифт:номер телефона
+	.promo
+		&_header
+			font-size: 50px//уменьшил шрифт:компания убер партнёр
+	.advantages
+		&_descr
+			width: 300px//круги стали круглыми, были овальными, уменьшил блок с надписями
+	.mobile
+		&_item
+			width: 300px//уменьшил ширину блока: мобильное приложение убер
+
+@media (max-width: 991px)//по документации бустрэп ≥992рх, колонки могут конфликтовать, поэтому нужно прописать 991рх; устанавливаем ширину экрана 768
+	.menu
+		&_item
+			padding-right: 8px//уменьшил пэддинг между верним меню
+		&_link
+			font-style: 10px//уменьшил шрифт:номер телефона
+			font-size: 11px//уменьшил размер шрифта верхнего меню
+	.subheader
+		&_logo
+			img
+				width: 100%//размер логотипа равен ширене блока
+		&_official
+			font-size: 11px//уменьшил шрифт: официальный партнёр
+		&_phone
+			font-size: 20px//уменьшил шрифт номера телефона
+		&_btn
+			margin-top: 21px//уменьшил отступ кнопки
+			height: 40px//уменьшил высоту кнопки
+			width: 141px//уменьшил ширину кнопки
+	.promo
+		&_header
+			font-size: 40px//уменьшил шрифт:компания убер партнёр
+		&_subheader
+			font-size: 30px
+	.advantages
+		&_item
+			flex-direction: column//сделал рисунки сверху а текст снизу в блоке: 8 причин
+			margin-top: 40px//отступ между блоками
+		&_text
+			margin-top: 10px//отступ между текстом и картинкой
+		&_wrepper
+			margin-right: 0//убрал отступ справа у круглых иконок
+
+@media (max-width: 767px)//по документации бустрэп ≥768рх, колонки могут конфликтовать, поэтому нужно прописать 767рх; устанавливаем ширину экрана 576
+	.menu
+		position: fixed//зафиксировал меню на одном месте, при пролистывании не уедет567
+		flex-direction: column//направление элементов, переделал меню из строчек в колонки
+		justify-content: center//выравнил по вертикали по-центру
+		align-items: center//выравнил по горизонтали по-центру
+		top: 0
+		left: -100%//спрятал меню за сайтом
+		width: 50%//ширина 50% от своего родителя
+		height: 100vh//величина распологает на 100% видимого устройства
+		padding: 20px 15px//отступы у колонок
+		background-color: rgba(0,0,0, .8)
+		transition: 0.6s all//плавное появление меню при клике
+		&_active
+			left: 0//меню появилось слева
+		&_item
+			padding-right: 0
+			border: none
+			margin: 10px 0//отступы сверху между строк
+		&_link
+			font-size: 20px//увеличил шрифт надпеси
+	.hamburger
+		//создал блок для мобильной версии на размер от 320 до 768рх, то что выше - блок должен быть скрыт
+		display: block
+		position: absolute
+		right: 10px
+		top: 50%
+		transform: translateY(-50%)
+		width: 26px
+		height: 12px
+		span //создаём 3 палки
+			display: block
+			height: 2px
+			width: 100%
+			background-color: #fff
+			margin-bottom: 2px//раздвинул палки
+			transition: 0.5s all//задержка 0,5 сек, плавное появление крестика
+		&_active //добовляем к каждой палке свой стиль
+			span
+				margin-bottom: -2px//крестик получился кривой, поправил
+				&:nth-child(1)
+					transform: translateY(3px) rotate(-45deg)//первая палка смещается на 3рх и разворачивается на 45 градусов вниз
+				&:nth-child(2)
+					display: none
+				&:nth-child(3)
+					transform: translateY(3px) rotate(45deg)//вторая палка смещается на 3рх и разворачивается на 45 градусов вверх
+	.choice
+		img
+			height: 300px//уменьшил картинку
+	.xs-hidden
+		display: none//на больших разрешениях блок скроется
+	.xs-visible
+		display: block//на маленьких разрешениях блок появится
+	.subheader
+		&_phone
+			display: block
+			margin-top: 10px
+			color: #ffffff
+			font-size: 16px//уменьшил шрифт номера телефона
+			font-weight: 400//уменьшил насыщенность шрифта
+			text-transform: uppercase//прописные буквы
+			text-align: center//горизонтальное выравнивание
+		&_btn
+			display: block
+			weight: 200px
+			height: 40px
+			margin: 0 auto//выравнил по центру
+			margin-top: 10px
+			&:hover
+				background-image: linear-gradient(to top, $main-color 0%, #4ce2ff 100%)/* отключил изменение цвета на маленьким мониторах */
+	.promo
+		&_header
+			line-height: 40px//уменьшил межстрочный интервал
+		&_btn
+			&:hover
+				background-image: linear-gradient(to top, $main-color 0%, #4ce2ff 100%)/* отключил изменение цвета на маленьким мониторах */
+
+@media (max-width: 575px)//по документации бустрэп ≥576рх, колонки могут конфликтовать, поэтому нужно прописать 576рх; устанавливаем ширину экрана 320
+	nav
+		height: 30px
+	header
+		height: 30px
+	.subheader
+		top: 30px
+		height: 60px
+		&_official
+			display: none
+		&_logo
+			margin-top: 16px
+		&_phone
+			font-size: 12px//уменьшил шрифт номера телефона
+			font-weight: 400//уменьшил насыщенность шрифта
+			text-transform: uppercase
+			margin-top: 11px
+		&_btn
+			weight: 110px
+			height: 22px
+			font-size: 12px//уменьшил шрифт
+			margin-top: 6px
+			&:hover
+				background-image: linear-gradient(to top, $main-color 0%, #4ce2ff 100%)/* отключил изменение цвета на маленьким мониторах */
+	.promo
+		min-height: 400px//уменьшил высоту блока
+		padding: 93px 0 35px 0//почему не делаю отступы слева и срава: сетка ограничивает
+		&_descr
+			display: none//скрыл надписи
+		&_header
+			font-size: 30px//уменьшил шрифт
+			padding: 0 24px
+			line-height: 35px//уменьшил межстрочный интервал
+		&_subheader
+			font-size: 20px//уменьшил шрифт
+			margin-top: 33px
+			padding: 0 10px
+			line-height: 30px//уменьшил межстрочный интервал
+		&_btn
+			width: 210px
+			height: 50px
+			margin-top: 72px
+			&:hover
+				background-image: linear-gradient(to top, $main-color 0%, #4ce2ff 100%)/* отключил изменение цвета на маленьким мониторах */
+	.menu
+		width: 85%//уменьшил размер выезжающего меню
+		&_item
+			width: 100%//будет растягиваться под всё меню, для пользователей с толстыми пальцами
+			text-align: center
+			padding: 5px 0
+		&_link
+			display: block//потому-что ссылка - это строчный элемент
+	.choice
+		img
+			height: 180px//уменьшил картинку
+	footer
+		display: none//пока скрыл подвал, что-бы не мешался
+	.advantages
+		padding: 22px 0 33px 0
+		&_promo
+			font-size: 16px//уменьшил шрифт
+			margin-top: 15px
+			line-height: 16px//уменьшил межстрочный интервал
+		&_descr
+			margin-top: 27px
+			width: 100%//что бы текст влазил в колонку
+		&_text
+			font-size: 16px//уменьшил шрифт
+		&_wrepper
+			width: 100px
+			height: 100px
